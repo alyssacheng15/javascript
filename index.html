@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Lesson 3 Lab</title>
-    </head>
-    <body>
-        <script>
-            function convert(cTemp) {
-                var hTemp = ((cTemp * 9) /5) + 32;
-                return hTemp;
-            }
-            document.write("Temperature in Fahrenheit: " + convert(100) + " degrees");
-        </script>
-    </body>
+  <head>
+    <title>Lesson 4 Lab</title>
+    <style>
+      p { font: 14px normal arial, verdana, helvetica; }
+    </style>
+    <script>
+      function telltime() {
+        var out = "";
+        var now = new Date();
+        out += now.toDateString() + " " + now.toLocaleTimeString();
+        document.getElementById("div1").innerHTML = out;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="div1"></div>
+    <script>
+      telltime();
+    </script>
+    <input type="button" onclick="location.reload()" value="Refresh" />
+  </body>
 </html>
