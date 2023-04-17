@@ -4,6 +4,12 @@
         <title>onMouseOver Demo</title>
     </head>
     <body>
-        <img src="image1.png" title="" alt="image 1" onClick="this.title='My New Title'" />
+        <script>
+            function convert(cTemp) {
+                var hTemp = ((cTemp * 9) /5) + 32;
+                return hTemp;
+            }
+            document.write("Temperature in Fahrenheit: " + convert(100) + " degrees");
+        </script>
     </body>
 </html>
