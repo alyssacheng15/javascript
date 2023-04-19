@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lesson 4 Lab</title>
-    <style>
-      p { font: 14px normal arial, verdana, helvetica; }
-    </style>
+    <title>Lesson 5 Lab</title>
     <script>
-      function telltime() {
-        var out = "";
-        var now = new Date();
-        out += now.toDateString() + " " + now.toLocaleTimeString();
-        document.getElementById("div1").innerHTML = out;
+      function wrangleArray() {
+        var sentence = prompt("IMPORTANT MESSAGE!\n\nEnter a sentence!\nMust be at least five words.")
+        var newSentence = "";
+        document.getElementById("div1").innerHTML = "<p>" + sentence + "</p>";
+        var words = sentence.split (" ");
+        var message = words.splice(3,2,"powerful");
+        alert('Removed words: ' + message);
+        document.getElementById("div2").innerHTML = "<p>" + words.join(" ").toUpperCase() + "</p>";
       }
     </script>
   </head>
   <body>
     <div id="div1"></div>
-    <script>
-      telltime();
-    </script>
-    <input type="button" onclick="location.reload()" value="Refresh" />
+    <div id="div2"></div>
+    <script>wrangleArray();</script>
   </body>
 </html>
