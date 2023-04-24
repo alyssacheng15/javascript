@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lesson 5 Lab</title>
+    <title>Lesson 6 Lab</title>
     <script>
-      function wrangleArray() {
-        var sentence = prompt("IMPORTANT MESSAGE!\n\nEnter a sentence!\nMust be at least five words.")
-        var newSentence = "";
-        document.getElementById("div1").innerHTML = "<p>" + sentence + "</p>";
-        var words = sentence.split (" ");
-        var message = words.splice(3,2,"powerful");
-        alert('Removed words: ' + message);
-        document.getElementById("div2").innerHTML = "<p>" + words.join(" ").toUpperCase() + "</p>";
+      var banners = ["banner1.png", "banner2.png", "banner3.png"]; //array
+      function run() { //function runs cycle every 2 seconds
+        setInterval(cycle, 2000);
+      }
+      function cycle() { 
+        var randomNum = Math.floor(Math.random() * banners.length); //generates a random number between 0 and array length
+        document.getElementById("banner").src = banners[randomNum];
       }
     </script>
+    <style>
+      img {
+        width: 1000px;
+      }
+    </style>
   </head>
-  <body>
-    <div id="div1"></div>
-    <div id="div2"></div>
-    <script>wrangleArray();</script>
+  <body onload = "run();">
+    <img id="banner" alt="banner" src="banner1.png" />
   </body>
 </html>
