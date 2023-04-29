@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lesson 6 Lab</title>
+    <title>Lesson 7 Lab</title>
     <script>
-      var banners = ["banner1.png", "banner2.png", "banner3.png"]; //array
-      function run() { //function runs cycle every 2 seconds
-        setInterval(cycle, 2000);
-      }
-      function cycle() { 
-        var randomNum = Math.floor(Math.random() * banners.length); //generates a random number between 0 and array length
-        document.getElementById("banner").src = banners[randomNum];
+      function Card(suit, face) {
+        this.suit = suit;
+        this.face = face;
+
+        this.setSuit = function(newSuit) {
+          this.suit = newSuit;
+        }
+
+        this.setFace = function(newFace) {
+          this.face = newFace;
+        }
       }
     </script>
-    <style>
-      img {
-        width: 1000px;
-      }
-    </style>
   </head>
-  <body onload = "run();">
-    <img id="banner" alt="banner" src="banner1.png" />
+  <body>
+    <script>
+      let myCard = new Card('hearts', 'queen');
+      
+      myCard.setSuit('diamonds');
+      myCard.setFace('king');
+      
+      document.write("Suit: " + myCard.suit + ", Face: " + myCard.face);
+    </script>
   </body>
 </html>
