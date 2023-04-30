@@ -3,28 +3,16 @@
   <head>
     <title>Lesson 7 Lab</title>
     <script>
-      function Card(suit, face) {
-        this.suit = suit;
-        this.face = face;
-
-        this.setSuit = function(newSuit) {
-          this.suit = newSuit;
-        }
-
-        this.setFace = function(newFace) {
-          this.face = newFace;
-        }
-      }
+      var george = new Object();
+      george.species = "monkey";
+      george.color = "brown";
+      george.isTall = true;
+      
+      alert(
+        JSON.stringify(george)
+      );
     </script>
   </head>
   <body>
-    <script>
-      let myCard = new Card('hearts', 'queen');
-      
-      myCard.setSuit('diamonds');
-      myCard.setFace('king');
-      
-      document.write("Suit: " + myCard.suit + ", Face: " + myCard.face);
-    </script>
   </body>
 </html>
