@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cookie Testing</title>
+        <script src="cookies.js"></script>
+        <script>
+            window.onload = function() {
+                var cookie = getCookie("myCookieData");
+                var cookieArray = cookie.split('#');
+                var cookie1 = cookieArray[0];
+                var cookie2 = cookieArray[1];
+                var cookie3 = cookieArray[2];
+                var cookie4 = cookieArray[3];
+                var cookie5 = cookieArray[4];
+                document.getElementById("output").innerHTML = "Your cookie values: " + "<br />" + 
+                cookie1 + "<br />" + cookie2 + "<br />" + cookie3 + "<br />" + cookie4 + "<br />" + cookie5;
+            }
+        </script>
+    </head>
+    <body>
+        <a href="cookietest.html">Back to Cookie Test Page 1</a>
+    <br/>
+        <div id="output"></div>
+    </body>
+</html>
