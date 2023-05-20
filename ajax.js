@@ -25,7 +25,7 @@ function responseAjax() {
             var now = new Date();
             var localTime = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
             var serverTime = myRequest.responseText;
-            document.getElementById("clock").innerHTML = "Server: " + serverTime + "<br />Local: " + localTime;
+            document.getElementById("clock").innerHTML = "Server: I deployed this on GitHub, and I don't think it runs PHP, so the server time will not show." + serverTime + "<br />Local: " + localTime;
         }
         else {
             alert("An error has occurred: " + myRequest.statusText);
