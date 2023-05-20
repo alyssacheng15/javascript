@@ -1,36 +1,18 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Lesson 13 Lab</title>
+    <title>Ajax Clock</title>
     <style>
-      span {
-        font-size: 16pt;
-        font-family: arial, helvetica, sans-serif;
-        padding: 20px;
+      #clock {
+        font: 32 px normal verdana, helvetica, sans-serif;
       }
     </style>
+    <script src="ajax.js"></script>
     <script>
-      function toggle() {
-        var myElement = document.getElementById("id1");
-        if(myElement.style.backgroundColor == 'red') {
-          myElement.style.backgroundColor = 'yellow';
-          myElement.style.color = 'black';
-          myElement.style.fontFamily = 'copperplate';
-          myElement.style.borderBlockStyle = 'dotted';
-        }
-        else {
-          myElement.style.backgroundColor = 'red';
-          myElement.style.color = 'white';
-          myElement.style.fontFamily = 'impact';
-          myElement.style.textDecoration = 'italic';
-        }
-      }
-      window.onload = function() {
-        document.getElementById("btn1").onclick = toggle;
-      }
+      window.onload = callAjax;
     </script>
   </head>
   <body>
-    <span id="id1">Welcome back to my site.</span>
-    <input type="button" id="btn1" value="Toggle" />
+    <div id="clock"></div>
   </body>
 </html>
