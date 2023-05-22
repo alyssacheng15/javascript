@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lesson 18 Lab</title>
+        <style>
+            video, img {
+                width: 60vw;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Video of Network Traffic (Twitter)</h1>
+        <p>A visual representation of what happens to the network when a button is pressed.</p>
+        <video src="recording.mov" autoplay muted loop></video>
+        <h1>Screenshot of Network Traffic</h1>
+        <p>How long it takes each function to load</p>
+        <img src="network.png">
+        <h1>Screenshot of the Server Timing Response</h1>
+        <p>How long it takes for "p2" to load</p>
+        <img src="timing.png">
+        <h1>Observations</h1>
+        <ul>
+            <li>As I clicked a button, many request statuses turned to "200," meaning the server responded with an "OK" and it is successful.</li>
+            <li>When I scroll down the page, many new requests come up.</li>
+            <li>There is a green and red graph on the top that displays the time it takes for the requests to load (in ms).</li>
+        </ul>
+    </body>
+</html>
