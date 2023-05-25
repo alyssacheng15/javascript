@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Keywords Grabber</title>
-        <script src="myAjaxLib.js"></script>
-        <script>
-            function display(content) {
-                document.getElementById("displaydiv").innerHTML = content;
-            }
-            window.onload = function() {
-                document.getElementById("btn1").onclick = function() {
-                    var url = document.getElementById("txt1").value;
-                    doAjax("metatags.php", "url=" + url, "display", "post", 0);
-                }
-            }
-        </script>
-    </head>
-    <body>
-        http://<input type="text" id="txt1" value="" />
-        <input type="button" id="btn1" value="Get Keywords" />
-        <h3>Keywords Received:</h3>
-        <div id="displaydiv"></div>
-    </body>
+<head>
+  <script src="prototype.js"></script>
+</head>
+<body>
+    <h1>Primate Friends</h1>
+    <div id="greetings"></div>
+
+  <script>
+    var primate = Class.create({
+      initialize: function(type, color, spanishName) {
+        this.type = type;
+        this.color = color;
+        this.spanishName = spanishName;
+      },
+
+    greet: function() {
+        $("greetings").update($("greetings").innerHTML + "Hello, I am a " + this.type + ", I am usually " + this.color + ", and my name in Spanish is " + this.spanishName + ".<br>");
+      }
+    });
+
+    var primate1 = new primate("monkey", "brown", "mono");
+    var primate2 = new primate("chimpanzee", "brown", "chimpancé");
+    var primate3 = new primate("orangutan", "orange", "orangután");
+    var primate4 = new primate("gorilla", "black", "gorila");
+
+    primate1.greet();
+    primate2.greet();
+    primate3.greet();
+    primate4.greet();
+  </script>
+</body>
 </html>
