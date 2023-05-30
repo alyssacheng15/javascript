@@ -1,35 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lesson 19 Lab</title>
-    <script src="prototype.js"></script>
+    <title>Lesson 22 Lab</title>
+    <script>
+      function flashLoaded(theMovie) {
+        if (typeof(theMovie) != "undefined") {
+          return theMovie.PercentLoaded() == 100;
+        } else {
+          return false;
+        }
+      }
+      function play() {
+        if (flashLoaded(document.getElementById('demo')) &&
+          !document.getElementById('demo').IsPlaying()) {
+            document.getElementById('demo').Play();
+          }
+      }
+      function stop() {
+        if (flashLoaded(document.getElementById('demo')) &&
+          document.getElementById('demo').IsPlaying()){
+            document.getElementById('demo').StopPlay();
+          }  
+      }
+      function rewind() {
+        stop();
+        if (document.getElementById('demo').Rewind()) {
+          document.getElementById('demo').Rewind();
+        }
+      }
+      function zoomIn() {
+        if (flashLoaded(document.getElementById('demo'))) {
+          document.getElemetById('demo').Zoom(50);
+        }
+      }
+      function zoomOut() {
+        if (flashLoaded(document.getElementById('demo'))) {
+          document.getElemetById('demo').Zoom(200);
+        }
+      }
+      function normalZoom() {
+        if (flashLoaded(document.getElementById('demo'))) {
+          document.getElemetById('demo').Zoom(0);
+        }
+      }
+      window.onload = function() {
+        document.getElementById("play").onclick = play;
+        document.getElementById("stop").onclick = stop;
+        document.getElementById("rewind").onclick = rewind;
+        document.getElementById("zoomIn").onclick = zoomIn;
+        document.getElementById("zoomOut").onclick = zoomOut;
+        document.getElementById("normalZoom").onclick = normalZoom;
+      }
+    </script>
 </head>
 <body>
-    <h1>Primate Friends</h1>
-    <div id="greetings"></div>
-
-  <script>
-    var primate = Class.create({
-      initialize: function(type, color, spanishName) {
-        this.type = type;
-        this.color = color;
-        this.spanishName = spanishName;
-      },
-
-    greet: function() {
-        $("greetings").update($("greetings").innerHTML + "Hello, I am a " + this.type + ", I am usually " + this.color + ", and my name in Spanish is " + this.spanishName + ".<br>");
-      }
-    });
-
-    var primate1 = new primate("monkey", "brown", "mono");
-    var primate2 = new primate("chimpanzee", "brown", "chimpancé");
-    var primate3 = new primate("orangutan", "orange", "orangután");
-    var primate4 = new primate("gorilla", "black", "gorila");
-
-    primate1.greet();
-    primate2.greet();
-    primate3.greet();
-    primate4.greet();
-  </script>
+    <object id="demo" name="demo"
+      data="example.swf"
+      width="318" height="300" play="false" loop="false"
+      type="application/x-shockwave-flash"
+      pluginspage="http://macromedia.com/go/getflashplayer"
+      swliveconnect="true">
+    </object>
+    <input id="play" type="button" value="Start" />
+    <input id="stop" type="button" value="Stop" />
+    <input id="rewind" type="button" value="Rewind" />
+    <input id="zoomIn" type="button" value="Zoom In" />
+    <input id="zoomOut" type="button" value="Zoom Out" />
+    <input id="normalZoom" type="button" value="Normal Zoom" />
 </body>
 </html>
