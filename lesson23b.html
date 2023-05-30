@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lesson 23B</title>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                function checkFields() {
+                    return ($("#name").attr("value") &&
+                    $("#email").attr("value"));
+                }
+                $("#form1").submit(function() {
+                    if(checkFields()) {
+                        $.post(
+                            'test.php', $("#form1").serialize(),
+                            function(data) {
+                                $("#div1").html(data);
+                            }
+                        );
+                    }
+                    else alert("Please fill in name and email fields!");
+                    return false;
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>20.2 to updated HTML5 </h1>
+        <section> <!--creates a section-->
+            <form id="form1">
+                Name<input type="text" name="name" id="name"> <br />
+                Email<input type="text" name="email" id="email"> <br />
+                <button type="submit" name="submit" id="submit">Submit</button> <!--convert input to button-->
+            </form>
+        </section>
+    </body>
+</html>
